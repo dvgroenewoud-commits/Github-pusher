@@ -8,293 +8,138 @@
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;700;800&display=swap');
 
   :root {
-    --bg: #0d0f10;
-    --surface: #161a1d;
-    --border: #2a2f33;
-    --accent: #00e5a0;
-    --accent-dim: #00e5a020;
-    --warn: #ff6b35;
-    --text: #e8eaec;
-    --muted: #6b7280;
-    --input-bg: #1c2126;
+    --bg: #0d0f10; --surface: #161a1d; --border: #2a2f33;
+    --accent: #00e5a0; --accent-dim: #00e5a018; --warn: #ff6b35;
+    --text: #e8eaec; --muted: #6b7280; --input-bg: #1c2126;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: var(--bg);
-    color: var(--text);
+    background: var(--bg); color: var(--text);
     font-family: 'JetBrains Mono', monospace;
-    min-height: 100vh;
-    padding: 24px 16px;
+    min-height: 100vh; padding: 20px 16px 40px;
   }
 
   header {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 16px;
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 14px;
   }
+  header h1 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: var(--accent); }
+  header span { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
 
-  header h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    color: var(--accent);
-  }
+  .section { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin-bottom: 14px; }
+  .section-title { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
 
-  header span {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .section {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 16px;
-    margin-bottom: 14px;
-  }
-
-  .section-title {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 12px;
-  }
-
-  .row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-  }
-
-  .field {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    flex: 1;
-    min-width: 140px;
-  }
-
-  label {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
+  .row { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .field { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 130px; }
+  label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
 
   input, textarea {
-    background: var(--input-bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    padding: 8px 10px;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.15s;
-    width: 100%;
+    background: var(--input-bg); border: 1px solid var(--border); color: var(--text);
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 8px 10px;
+    border-radius: 4px; outline: none; transition: border-color 0.15s; width: 100%;
   }
-
   input:focus, textarea:focus { border-color: var(--accent); }
   input[type="password"] { letter-spacing: 2px; }
-
-  textarea {
-    resize: vertical;
-    min-height: 260px;
-    line-height: 1.5;
-    tab-size: 2;
-  }
+  textarea { resize: vertical; min-height: 240px; line-height: 1.5; }
 
   button {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    border-radius: 4px;
-    border: none;
-    padding: 10px 20px;
-    transition: all 0.15s;
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px;
+    letter-spacing: 1px; cursor: pointer; border-radius: 4px; border: none;
+    padding: 10px 18px; transition: all 0.15s; white-space: nowrap;
   }
-
-  .btn-push {
-    background: var(--accent);
-    color: #0d0f10;
-    white-space: nowrap;
-  }
+  .btn-push { background: var(--accent); color: #0d0f10; }
   .btn-push:hover { filter: brightness(1.1); }
-  .btn-push:active { transform: scale(0.98); }
   .btn-push:disabled { opacity: 0.4; cursor: not-allowed; }
-
-  .btn-secondary {
-    background: var(--border);
-    color: var(--muted);
-    font-size: 11px;
-    padding: 8px 14px;
-  }
+  .btn-secondary { background: var(--border); color: var(--muted); font-size: 11px; padding: 8px 13px; }
   .btn-secondary:hover { background: #3a3f44; color: var(--text); }
 
-  .btn-danger {
-    background: transparent;
-    border: 1px solid var(--warn);
-    color: var(--warn);
-    font-size: 10px;
-    padding: 4px 8px;
-  }
-  .btn-danger:hover { background: #ff6b3520; }
-
-  /* REPO PROFILES */
-  .profiles-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
+  /* PROFILES */
+  .profiles-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
   .profile-card {
-    background: var(--input-bg);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: all 0.15s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
+    background: var(--input-bg); border: 1px solid var(--border); border-radius: 5px;
+    padding: 7px 11px; cursor: pointer; transition: all 0.15s;
+    display: flex; align-items: center; gap: 7px; font-size: 12px;
   }
-
   .profile-card:hover { border-color: var(--accent); color: var(--accent); }
   .profile-card.active { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
-
-  .profile-card .del {
-    font-size: 10px;
-    color: var(--muted);
-    padding: 2px 5px;
-    border-radius: 3px;
-    line-height: 1;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-family: monospace;
-  }
+  .profile-card .del { font-size:10px; color:var(--muted); background:transparent; border:none; cursor:pointer; font-family:monospace; padding:1px 4px; }
   .profile-card .del:hover { color: var(--warn); }
+  .add-profile-row { display:flex; gap:8px; align-items:flex-end; flex-wrap:wrap; margin-top:10px; padding-top:10px; border-top:1px solid var(--border); }
+  .add-profile-row .field { min-width: 110px; }
 
-  .add-profile-row {
-    display: flex;
-    gap: 8px;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid var(--border);
+  /* TABS */
+  .tabs { display: flex; gap: 2px; margin-bottom: 14px; }
+  .tab {
+    font-family:'Syne',sans-serif; font-weight:700; font-size:11px; letter-spacing:1px;
+    padding:7px 16px; border-radius:4px; border:1px solid var(--border);
+    background:transparent; color:var(--muted); cursor:pointer; transition:all 0.15s;
   }
+  .tab.active { background:var(--accent-dim); border-color:var(--accent); color:var(--accent); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
 
-  .add-profile-row .field { min-width: 120px; }
-
-  /* FILE */
-  .file-path-row {
-    display: flex;
-    gap: 8px;
-    align-items: flex-end;
+  /* DROP ZONE */
+  .drop-zone {
+    border: 2px dashed var(--border); border-radius: 6px; padding: 20px;
+    text-align: center; color: var(--muted); font-size: 12px;
+    transition: all 0.2s; cursor: pointer; margin-bottom: 12px; position: relative;
   }
+  .drop-zone:hover, .drop-zone.dragover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
+  .drop-zone input[type="file"] { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%; }
+  .drop-zone .icon { font-size: 24px; margin-bottom: 6px; }
+
+  /* FILE QUEUE */
+  .file-queue { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+  .file-item {
+    background: var(--input-bg); border: 1px solid var(--border); border-radius: 5px;
+    padding: 8px 12px; display: flex; align-items: center; gap: 8px; font-size: 12px;
+  }
+  .file-item.done { border-color: var(--accent); }
+  .file-item.error { border-color: var(--warn); }
+  .file-item .fname { flex: 1; }
+  .file-item .fpath { flex: 1; }
+  .file-item .fpath input { font-size:11px; padding:4px 7px; }
+  .file-item .fsize { font-size:10px; color:var(--muted); }
+  .file-item .fremove { background:none; border:none; color:var(--muted); cursor:pointer; font-size:14px; padding:0 4px; }
+  .file-item .fremove:hover { color: var(--warn); }
+
+  .push-all-btn { margin-top: 10px; width: 100%; padding: 12px; font-size: 14px; }
+
+  /* SINGLE */
+  .file-path-row { display: flex; gap: 8px; align-items: flex-end; }
   .file-path-row .field { flex: 1; }
+  .file-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }
+  .chip { background:var(--accent-dim); border:1px solid var(--accent); color:var(--accent); font-size:10px; padding:3px 8px; border-radius:3px; cursor:pointer; }
+  .chip:hover { background: #00e5a030; }
+  .char-count { font-size:10px; color:var(--muted); text-align:right; margin-top:3px; }
 
-  .commit-row {
-    display: flex;
-    gap: 10px;
-    align-items: flex-end;
-    flex-wrap: wrap;
-  }
-  .commit-row .field { flex: 1; min-width: 200px; }
+  /* PREVIEW */
+  .preview-bar { display:flex; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+  #previewFrame { width:100%; height:480px; border:1px solid var(--border); border-radius:5px; background:white; }
+  .size-btn { font-family:'JetBrains Mono',monospace; font-size:10px; padding:4px 8px; border-radius:3px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; }
+  .size-btn.active { border-color:var(--accent); color:var(--accent); }
 
-  .file-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 8px;
-  }
+  /* PUSH + LOG */
+  .push-row { display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; }
+  .push-row .field { flex:1; min-width:200px; }
+  #log { background:#0a0c0d; border:1px solid var(--border); border-radius:6px; padding:14px; min-height:60px; font-size:12px; line-height:1.7; white-space:pre-wrap; word-break:break-all; color:var(--muted); max-height:200px; overflow-y:auto; }
+  .log-success { color:var(--accent); } .log-error { color:var(--warn); } .log-info { color:#60a5fa; }
 
-  .file-chip {
-    background: var(--accent-dim);
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 0.1s;
-  }
-  .file-chip:hover { background: #00e5a040; }
-
-  .char-count {
-    font-size: 10px;
-    color: var(--muted);
-    text-align: right;
-    margin-top: 3px;
-  }
-
-  #log {
-    background: #0a0c0d;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 14px;
-    min-height: 60px;
-    font-size: 12px;
-    line-height: 1.7;
-    white-space: pre-wrap;
-    word-break: break-all;
-    color: var(--muted);
-  }
-
-  .log-success { color: var(--accent); }
-  .log-error { color: var(--warn); }
-  .log-info { color: #60a5fa; }
-
-  .token-note {
-    font-size: 10px;
-    color: var(--muted);
-    margin-top: 6px;
-    line-height: 1.6;
-  }
-  .token-note a { color: var(--accent); text-decoration: none; }
-
-  .spinner {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border: 2px solid #0d0f10;
-    border-top-color: transparent;
-    border-radius: 50%;
-    animation: spin 0.6s linear infinite;
-    margin-right: 6px;
-    vertical-align: middle;
-  }
-
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .active-repo-badge {
-    font-size: 11px;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-  .active-repo-badge span { color: var(--accent); }
+  .token-note { font-size:10px; color:var(--muted); margin-top:6px; line-height:1.6; }
+  .token-note a { color:var(--accent); text-decoration:none; }
+  .active-repo-badge { font-size:11px; color:var(--muted); margin-bottom:10px; }
+  .active-repo-badge span { color:var(--accent); }
+  .spinner { display:inline-block; width:10px; height:10px; border:2px solid #0d0f10; border-top-color:transparent; border-radius:50%; animation:spin 0.6s linear infinite; margin-right:6px; vertical-align:middle; }
+  @keyframes spin { to { transform:rotate(360deg); } }
 </style>
 </head>
 <body>
 
 <header>
   <h1>⬆ GitHub Pusher</h1>
-  <span>Claude Code → GitHub</span>
+  <span>v3 — Claude Code → GitHub</span>
 </header>
 
 <!-- TOKEN -->
@@ -306,69 +151,102 @@
       <input type="password" id="token" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off">
     </div>
   </div>
-  <p class="token-note">
-    Token nodig? → <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a> — scope: <strong>repo</strong>
-  </p>
+  <p class="token-note">Token nodig? → <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a> — scope: <strong>repo</strong></p>
   <div style="display:flex;gap:8px;margin-top:10px">
-    <button class="btn-secondary" onclick="saveToken()">💾 Token opslaan</button>
+    <button class="btn-secondary" onclick="saveToken()">💾 Opslaan</button>
     <button class="btn-secondary" onclick="testToken()">🔎 Testen</button>
   </div>
 </div>
 
-<!-- REPO PROFILES -->
+<!-- PROFILES -->
 <div class="section">
   <div class="section-title">📁 Repo Profielen</div>
-
   <div id="profilesGrid" class="profiles-grid"></div>
-
   <div class="add-profile-row">
-    <div class="field">
-      <label>Owner</label>
-      <input type="text" id="newOwner" placeholder="dvgroenewoud-commits">
-    </div>
-    <div class="field">
-      <label>Repo</label>
-      <input type="text" id="newRepo" placeholder="Whispr-flow">
-    </div>
-    <div class="field" style="max-width:100px">
-      <label>Branch</label>
-      <input type="text" id="newBranch" placeholder="main">
-    </div>
-    <button class="btn-secondary" onclick="addProfile()" style="height:38px;margin-bottom:0">＋ Toevoegen</button>
+    <div class="field"><label>Owner</label><input type="text" id="newOwner" placeholder="dvgroenewoud-commits"></div>
+    <div class="field"><label>Repo</label><input type="text" id="newRepo" placeholder="mijn-repo"></div>
+    <div class="field" style="max-width:90px"><label>Branch</label><input type="text" id="newBranch" placeholder="main"></div>
+    <button class="btn-secondary" onclick="addProfile()" style="height:38px;margin-bottom:0">＋</button>
   </div>
 </div>
 
-<!-- FILE -->
+<!-- FILES -->
 <div class="section">
-  <div class="section-title">📄 Bestand</div>
+  <div class="section-title">📄 Bestanden</div>
   <div id="activeRepoBadge" class="active-repo-badge">Geen repo geselecteerd</div>
 
-  <div class="file-path-row">
-    <div class="field">
-      <label>Bestandspad (in repo)</label>
-      <input type="text" id="filepath" placeholder="index.html  of  src/app.js">
-    </div>
-    <button class="btn-secondary" onclick="fetchFile()" style="height:38px;margin-bottom:0">⬇ Ophalen</button>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('single',this)">Enkel bestand</button>
+    <button class="tab" onclick="switchTab('multi',this)">Meerdere bestanden</button>
   </div>
 
-  <div id="knownFiles" class="file-list" style="margin-top:8px;margin-bottom:4px"></div>
+  <!-- SINGLE TAB -->
+  <div id="tab-single" class="tab-panel active">
+    <div class="file-path-row">
+      <div class="field">
+        <label>Bestandspad (in repo)</label>
+        <input type="text" id="filepath" placeholder="index.html">
+      </div>
+      <button class="btn-secondary" onclick="fetchFile()" style="height:38px;margin-bottom:0">⬇ Ophalen</button>
+    </div>
+    <div id="knownFiles" class="file-chips"></div>
 
-  <div style="margin-top:10px">
-    <label>Bestandsinhoud</label>
-    <textarea id="content" placeholder="Plak hier je code..." spellcheck="false" oninput="updateCount()"></textarea>
-    <div class="char-count" id="charCount">0 tekens</div>
+    <div class="drop-zone" id="singleDrop"
+         ondragover="onDragOver(event,'singleDrop')" ondragleave="onDragLeave('singleDrop')" ondrop="onDropSingle(event)">
+      <input type="file" onchange="onFilePick(event)">
+      <div class="icon">📂</div>
+      <div>Sleep een bestand hierheen of klik om te kiezen</div>
+      <div style="font-size:10px;margin-top:4px">Bestandsnaam wordt automatisch ingevuld als pad</div>
+    </div>
+
+    <div>
+      <label>Bestandsinhoud</label>
+      <textarea id="content" placeholder="Plak hier je code..." spellcheck="false" oninput="updateCount();syncPreview()"></textarea>
+      <div class="char-count" id="charCount">0 tekens</div>
+    </div>
+
+    <div style="margin-top:16px">
+      <div class="preview-bar">
+        <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)">👁 HTML Preview</span>
+        <button class="size-btn active" onclick="setPreviewSize('100%',this)">Desktop</button>
+        <button class="size-btn" onclick="setPreviewSize('768px',this)">Tablet</button>
+        <button class="size-btn" onclick="setPreviewSize('390px',this)">Mobiel</button>
+        <button class="btn-secondary" onclick="syncPreview()" style="margin-left:auto;padding:5px 10px">↺ Refresh</button>
+      </div>
+      <div style="overflow-x:auto">
+        <iframe id="previewFrame" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- MULTI TAB -->
+  <div id="tab-multi" class="tab-panel">
+    <div class="drop-zone" id="multiDrop"
+         ondragover="onDragOver(event,'multiDrop')" ondragleave="onDragLeave('multiDrop')" ondrop="onDropMulti(event)">
+      <input type="file" multiple onchange="onMultiFilePick(event)">
+      <div class="icon">📂</div>
+      <div>Sleep meerdere bestanden hierheen of klik om te kiezen</div>
+    </div>
+    <div id="fileQueue" class="file-queue"></div>
+    <div class="row" style="margin-top:10px">
+      <div class="field">
+        <label>Commit bericht (alle bestanden)</label>
+        <input type="text" id="multiCommitMsg" placeholder="Update via GitHub Pusher">
+      </div>
+    </div>
+    <button class="btn-push push-all-btn" id="pushAllBtn" onclick="pushAll()">⬆ Push alle bestanden</button>
   </div>
 </div>
 
-<!-- PUSH -->
-<div class="section">
+<!-- PUSH SINGLE -->
+<div class="section" id="singlePushSection">
   <div class="section-title">🚀 Push naar GitHub</div>
-  <div class="commit-row">
+  <div class="push-row">
     <div class="field">
       <label>Commit bericht</label>
       <input type="text" id="commitMsg" placeholder="Update via GitHub Pusher">
     </div>
-    <button class="btn-push" id="pushBtn" onclick="pushFile()">⬆ Push bestand</button>
+    <button class="btn-push" id="pushBtn" onclick="pushSingle()">⬆ Push bestand</button>
   </div>
 </div>
 
@@ -379,253 +257,226 @@
 </div>
 
 <script>
-// ── Storage helpers ──────────────────────────────────────────
 const LS = {
-  get: k => localStorage.getItem('ghp_' + k) || '',
-  set: (k,v) => localStorage.setItem('ghp_' + k, v),
-  getJSON: (k, def) => { try { return JSON.parse(localStorage.getItem('ghp_' + k)) || def; } catch { return def; } },
-  setJSON: (k,v) => localStorage.setItem('ghp_' + k, JSON.stringify(v))
+  get: k => localStorage.getItem('ghp_'+k)||'',
+  set: (k,v) => localStorage.setItem('ghp_'+k,v),
+  getJSON: (k,def) => { try { return JSON.parse(localStorage.getItem('ghp_'+k))??def; } catch { return def; } },
+  setJSON: (k,v) => localStorage.setItem('ghp_'+k,JSON.stringify(v))
 };
 
-let activeProfile = null;
-let currentSha = null;
+let activeProfile = null, currentSha = null, fileQueue = [];
 
-// ── Init ─────────────────────────────────────────────────────
 window.onload = () => {
   document.getElementById('token').value = LS.get('token');
 
-  // Migrate old single-repo config to profile if needed
-  const oldOwner = LS.get('owner');
-  const oldRepo  = LS.get('repo');
-  if (oldOwner && oldRepo) {
-    const profiles = LS.getJSON('profiles', []);
-    const exists = profiles.find(p => p.owner === oldOwner && p.repo === oldRepo);
-    if (!exists) {
-      profiles.push({ owner: oldOwner, repo: oldRepo, branch: LS.get('branch') || 'main' });
-      LS.setJSON('profiles', profiles);
-    }
+  const defaults = [
+    { owner:'dvgroenewoud-commits', repo:'Whispr-flow',    branch:'main' },
+    { owner:'dvgroenewoud-commits', repo:'Docuscan',       branch:'main' },
+    { owner:'dvgroenewoud-commits', repo:'cyclus-tracker', branch:'main' },
+    { owner:'dvgroenewoud-commits', repo:'Github-pusher',  branch:'main' },
+    { owner:'dvgroenewoud-commits', repo:'Mindforge',      branch:'main' },
+  ];
+
+  let profiles = LS.getJSON('profiles', null);
+  if (!profiles) {
+    LS.setJSON('profiles', defaults);
+  } else {
+    let changed = false;
+    defaults.forEach(d => { if (!profiles.find(p => p.repo===d.repo)) { profiles.push(d); changed=true; } });
+    if (changed) LS.setJSON('profiles', profiles);
   }
 
-  // Pre-fill add-form with owner
-  document.getElementById('newOwner').value = oldOwner || 'dvgroenewoud-commits';
+  document.getElementById('newOwner').value = 'dvgroenewoud-commits';
   document.getElementById('newBranch').value = 'main';
-
   renderProfiles();
 
-  // Auto-select last used profile
-  const lastRepo = LS.get('lastRepo');
-  if (lastRepo) {
-    const profiles = LS.getJSON('profiles', []);
-    const p = profiles.find(p => p.repo === lastRepo);
-    if (p) selectProfile(p, false);
-  }
+  const last = LS.get('lastRepo');
+  if (last) { const p = LS.getJSON('profiles',[]).find(p=>p.repo===last); if(p) selectProfile(p,false); }
 };
 
-// ── Profiles ─────────────────────────────────────────────────
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+  document.getElementById('singlePushSection').style.display = name==='single' ? '' : 'none';
+}
+
 function renderProfiles() {
-  const profiles = LS.getJSON('profiles', []);
+  const profiles = LS.getJSON('profiles',[]);
   const grid = document.getElementById('profilesGrid');
-
-  if (profiles.length === 0) {
-    grid.innerHTML = '<span style="font-size:11px;color:var(--muted)">Nog geen profielen — voeg er hieronder een toe.</span>';
-    return;
-  }
-
-  grid.innerHTML = profiles.map((p, i) => `
-    <div class="profile-card ${activeProfile && activeProfile.repo === p.repo ? 'active' : ''}"
+  if (!profiles.length) { grid.innerHTML='<span style="font-size:11px;color:var(--muted)">Nog geen profielen.</span>'; return; }
+  grid.innerHTML = profiles.map((p,i) => `
+    <div class="profile-card ${activeProfile?.repo===p.repo?'active':''}"
          onclick="selectProfile(${JSON.stringify(p).replace(/"/g,'&quot;')})">
       <span>${p.repo}</span>
       <span style="font-size:9px;color:var(--muted)">${p.branch}</span>
-      <button class="del" onclick="event.stopPropagation();deleteProfile(${i})" title="Verwijder">✕</button>
-    </div>
-  `).join('');
+      <button class="del" onclick="event.stopPropagation();deleteProfile(${i})">✕</button>
+    </div>`).join('');
 }
 
-function selectProfile(p, save = true) {
-  activeProfile = p;
-  if (save) LS.set('lastRepo', p.repo);
-  currentSha = null;
-  document.getElementById('activeRepoBadge').innerHTML =
-    `Actief: <span>${p.owner}/${p.repo}</span> (${p.branch})`;
+function selectProfile(p, save=true) {
+  activeProfile = p; if(save) LS.set('lastRepo', p.repo); currentSha = null;
+  document.getElementById('activeRepoBadge').innerHTML = `Actief: <span>${p.owner}/${p.repo}</span> (${p.branch})`;
   document.getElementById('filepath').value = '';
   document.getElementById('content').value = '';
-  document.getElementById('charCount').textContent = '0 tekens';
-  renderProfiles();
-  renderKnownFiles();
-  log(`📁 Repo geselecteerd: ${p.owner}/${p.repo} (${p.branch})`, 'info');
+  updateCount(); syncPreview(); renderProfiles(); renderKnownFiles();
+  log(`📁 ${p.owner}/${p.repo} (${p.branch})`, 'info');
 }
 
 function addProfile() {
-  const owner  = document.getElementById('newOwner').value.trim();
-  const repo   = document.getElementById('newRepo').value.trim();
-  const branch = document.getElementById('newBranch').value.trim() || 'main';
-  if (!owner || !repo) { log('⚠️ Vul owner én repo in.', 'error'); return; }
-
-  const profiles = LS.getJSON('profiles', []);
-  if (profiles.find(p => p.owner === owner && p.repo === repo)) {
-    log('⚠️ Dit profiel bestaat al.', 'error'); return;
-  }
-  profiles.push({ owner, repo, branch });
-  LS.setJSON('profiles', profiles);
-  document.getElementById('newRepo').value = '';
-  renderProfiles();
-  log(`✅ Profiel toegevoegd: ${owner}/${repo}`, 'success');
+  const owner = document.getElementById('newOwner').value.trim();
+  const repo  = document.getElementById('newRepo').value.trim();
+  const branch= document.getElementById('newBranch').value.trim()||'main';
+  if(!owner||!repo){log('⚠️ Vul owner én repo in.','error');return;}
+  const profiles = LS.getJSON('profiles',[]);
+  if(profiles.find(p=>p.repo===repo)){log('⚠️ Bestaat al.','error');return;}
+  profiles.push({owner,repo,branch}); LS.setJSON('profiles',profiles);
+  document.getElementById('newRepo').value=''; renderProfiles();
+  log(`✅ Profiel toegevoegd: ${owner}/${repo}`,'success');
 }
 
 function deleteProfile(i) {
-  const profiles = LS.getJSON('profiles', []);
-  const removed = profiles.splice(i, 1)[0];
-  LS.setJSON('profiles', profiles);
-  if (activeProfile && activeProfile.repo === removed.repo) {
-    activeProfile = null;
-    document.getElementById('activeRepoBadge').innerHTML = 'Geen repo geselecteerd';
-  }
+  const profiles = LS.getJSON('profiles',[]);
+  const removed = profiles.splice(i,1)[0]; LS.setJSON('profiles',profiles);
+  if(activeProfile?.repo===removed.repo){ activeProfile=null; document.getElementById('activeRepoBadge').innerHTML='Geen repo geselecteerd'; }
   renderProfiles();
-  log(`🗑 Profiel verwijderd: ${removed.repo}`, 'info');
 }
 
-// ── Token ────────────────────────────────────────────────────
-function saveToken() {
-  LS.set('token', document.getElementById('token').value.trim());
-  log('✅ Token opgeslagen.', 'success');
-}
+function saveToken() { LS.set('token', document.getElementById('token').value.trim()); log('✅ Token opgeslagen.','success'); }
 
 async function testToken() {
   const token = document.getElementById('token').value.trim();
-  if (!token) { log('⚠️ Vul eerst een token in.', 'error'); return; }
-  log('Testen...', 'info');
+  if(!token){log('⚠️ Vul token in.','error');return;}
   try {
-    const r = await fetch('https://api.github.com/user', {
-      headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' }
-    });
+    const r = await fetch('https://api.github.com/user',{headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json'}});
     const d = await r.json();
-    r.ok ? log(`✅ Token geldig — ingelogd als: ${d.login}`, 'success')
-         : log(`❌ Token ongeldig: ${d.message}`, 'error');
-  } catch(e) { log('❌ Netwerkfout: ' + e.message, 'error'); }
+    r.ok ? log(`✅ Ingelogd als: ${d.login}`,'success') : log(`❌ ${d.message}`,'error');
+  } catch(e){log('❌ '+e.message,'error');}
 }
 
-// ── Known files ───────────────────────────────────────────────
-function knownFilesKey() {
-  return activeProfile ? `files_${activeProfile.owner}_${activeProfile.repo}` : null;
+function knownKey(){ return activeProfile ? `files_${activeProfile.owner}_${activeProfile.repo}` : null; }
+function addKnownFile(path){ const k=knownKey(); if(!k)return; let f=LS.getJSON(k,[]); f=[path,...f.filter(x=>x!==path)].slice(0,15); LS.setJSON(k,f); renderKnownFiles(); }
+function renderKnownFiles(){ const k=knownKey(); const files=k?LS.getJSON(k,[]):[]; document.getElementById('knownFiles').innerHTML=files.map(f=>`<span class="chip" onclick="quickLoad('${f}')">${f}</span>`).join(''); }
+function quickLoad(path){ document.getElementById('filepath').value=path; fetchFile(); }
+
+function onDragOver(e,id){ e.preventDefault(); document.getElementById(id).classList.add('dragover'); }
+function onDragLeave(id){ document.getElementById(id).classList.remove('dragover'); }
+
+function onDropSingle(e){ e.preventDefault(); onDragLeave('singleDrop'); const f=e.dataTransfer.files[0]; if(f)loadSingleFile(f); }
+function onFilePick(e){ const f=e.target.files[0]; if(f)loadSingleFile(f); }
+function loadSingleFile(file){
+  const r=new FileReader();
+  r.onload=ev=>{ document.getElementById('filepath').value=file.name; document.getElementById('content').value=ev.target.result; updateCount(); syncPreview(); log(`📂 ${file.name} (${(file.size/1024).toFixed(1)} KB)`,'info'); };
+  r.readAsText(file);
 }
 
-function addKnownFile(path) {
-  const k = knownFilesKey(); if (!k) return;
-  let files = LS.getJSON(k, []);
-  files = [path, ...files.filter(f => f !== path)].slice(0, 20);
-  LS.setJSON(k, files);
-  renderKnownFiles();
+function onDropMulti(e){ e.preventDefault(); onDragLeave('multiDrop'); addFilesToQueue(Array.from(e.dataTransfer.files)); }
+function onMultiFilePick(e){ addFilesToQueue(Array.from(e.target.files)); }
+function addFilesToQueue(files){
+  files.forEach(file=>{ const r=new FileReader(); r.onload=ev=>{ fileQueue.push({name:file.name,path:file.name,content:ev.target.result,status:'pending',sha:null}); renderQueue(); }; r.readAsText(file); });
 }
-
-function renderKnownFiles() {
-  const k = knownFilesKey();
-  const files = k ? LS.getJSON(k, []) : [];
-  document.getElementById('knownFiles').innerHTML = files.map(f =>
-    `<span class="file-chip" onclick="quickLoad('${f}')">${f}</span>`
-  ).join('');
+function renderQueue(){
+  const el=document.getElementById('fileQueue');
+  if(!fileQueue.length){el.innerHTML='';return;}
+  el.innerHTML=fileQueue.map((f,i)=>{
+    const icon=f.status==='done'?'✅':f.status==='error'?'❌':f.status==='pushing'?'⏳':'📄';
+    return `<div class="file-item ${f.status!=='pending'?f.status:''}">
+      <span>${icon}</span>
+      <span class="fname">${f.name}</span>
+      <span class="fpath"><input type="text" value="${f.path}" onchange="fileQueue[${i}].path=this.value"></span>
+      <span class="fsize">${(f.content.length/1024).toFixed(1)} KB</span>
+      <button class="fremove" onclick="removeFromQueue(${i})">✕</button>
+    </div>`;
+  }).join('');
 }
+function removeFromQueue(i){ fileQueue.splice(i,1); renderQueue(); }
 
-function quickLoad(path) {
-  document.getElementById('filepath').value = path;
-  fetchFile();
-}
-
-// ── Fetch file ────────────────────────────────────────────────
-async function fetchFile() {
-  if (!activeProfile) { log('⚠️ Selecteer eerst een repo-profiel.', 'error'); return; }
-  const { owner, repo, branch } = activeProfile;
-  const token = document.getElementById('token').value.trim();
-  const path  = document.getElementById('filepath').value.trim();
-  if (!path)  { log('⚠️ Vul een bestandspad in.', 'error'); return; }
-  if (!token) { log('⚠️ Vul je token in.', 'error'); return; }
-
-  log(`⬇ Ophalen: ${path} (${branch})...`, 'info');
+async function fetchFile(){
+  if(!activeProfile){log('⚠️ Selecteer een repo.','error');return;}
+  const token=document.getElementById('token').value.trim();
+  const path=document.getElementById('filepath').value.trim();
+  const {owner,repo,branch}=activeProfile;
+  if(!path||!token){log('⚠️ Vul pad en token in.','error');return;}
+  log(`⬇ Ophalen: ${path}...`,'info');
   try {
-    const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`, {
-      headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' }
-    });
-    const d = await r.json();
-    if (r.ok) {
-      currentSha = d.sha;
-      const decoded = decodeURIComponent(escape(atob(d.content.replace(/\n/g, ''))));
-      document.getElementById('content').value = decoded;
-      updateCount();
-      addKnownFile(path);
-      log(`✅ Geladen (${decoded.length} tekens, sha: ${d.sha.slice(0,7)})`, 'success');
-    } else {
-      currentSha = null;
-      log(`⚠️ Niet gevonden (${d.message}) — nieuw bestand bij push.`, 'info');
-    }
-  } catch(e) { log('❌ Fout: ' + e.message, 'error'); }
+    const r=await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`,{headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json'}});
+    const d=await r.json();
+    if(r.ok){ currentSha=d.sha; const txt=decodeURIComponent(escape(atob(d.content.replace(/\n/g,'')))); document.getElementById('content').value=txt; updateCount(); syncPreview(); addKnownFile(path); log(`✅ Geladen (${txt.length} tekens, sha: ${d.sha.slice(0,7)})`,'success'); }
+    else{ currentSha=null; log(`⚠️ Niet gevonden — nieuw bestand bij push.`,'info'); }
+  } catch(e){log('❌ '+e.message,'error');}
 }
 
-// ── Push file ─────────────────────────────────────────────────
-async function pushFile() {
-  if (!activeProfile) { log('⚠️ Selecteer eerst een repo-profiel.', 'error'); return; }
-  const { owner, repo, branch } = activeProfile;
-  const token   = document.getElementById('token').value.trim();
-  const path    = document.getElementById('filepath').value.trim();
-  const content = document.getElementById('content').value;
-  const msg     = document.getElementById('commitMsg').value.trim() || 'Update via GitHub Pusher';
+async function githubPush(owner,repo,branch,path,content,msg,sha,token){
+  if(!sha){ try{ const r=await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`,{headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json'}}); if(r.ok){const d=await r.json();sha=d.sha;} }catch{} }
+  const body={message:msg,content:btoa(unescape(encodeURIComponent(content))),branch};
+  if(sha)body.sha=sha;
+  const r=await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`,{method:'PUT',headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json','Content-Type':'application/json'},body:JSON.stringify(body)});
+  const data=await r.json(); return {ok:r.ok,data};
+}
 
-  if (!token)   { log('⚠️ Vul je token in.', 'error'); return; }
-  if (!path)    { log('⚠️ Vul een bestandspad in.', 'error'); return; }
-  if (!content) { log('⚠️ Bestandsinhoud is leeg.', 'error'); return; }
+async function pushSingle(){
+  if(!activeProfile){log('⚠️ Selecteer een repo.','error');return;}
+  const token=document.getElementById('token').value.trim();
+  const path=document.getElementById('filepath').value.trim();
+  const content=document.getElementById('content').value;
+  const msg=document.getElementById('commitMsg').value.trim()||'Update via GitHub Pusher';
+  const {owner,repo,branch}=activeProfile;
+  if(!token||!path||!content){log('⚠️ Token, pad en inhoud zijn verplicht.','error');return;}
+  const btn=document.getElementById('pushBtn');
+  btn.disabled=true; btn.innerHTML='<span class="spinner"></span>Pushen...';
+  log(`⬆ ${owner}/${repo}/${path}...`,'info');
+  const {ok,data}=await githubPush(owner,repo,branch,path,content,msg,currentSha,token);
+  if(ok){ currentSha=data.content.sha; addKnownFile(path); log(`✅ Commit: ${data.commit.sha.slice(0,7)} — "${msg}"`,'success'); log(`🔗 ${data.content.html_url}`,'success'); }
+  else{ log(`❌ ${data.message}`,'error'); }
+  btn.disabled=false; btn.innerHTML='⬆ Push bestand';
+}
 
-  const btn = document.getElementById('pushBtn');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span>Pushen...';
-
-  if (!currentSha) {
-    try {
-      const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`, {
-        headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' }
-      });
-      if (r.ok) { const d = await r.json(); currentSha = d.sha; }
-    } catch {}
+async function pushAll(){
+  if(!activeProfile){log('⚠️ Selecteer een repo.','error');return;}
+  if(!fileQueue.length){log('⚠️ Geen bestanden.','error');return;}
+  const token=document.getElementById('token').value.trim();
+  if(!token){log('⚠️ Vul token in.','error');return;}
+  const {owner,repo,branch}=activeProfile;
+  const msg=document.getElementById('multiCommitMsg').value.trim()||'Update via GitHub Pusher';
+  const btn=document.getElementById('pushAllBtn');
+  btn.disabled=true; btn.innerHTML='<span class="spinner"></span>Bezig...';
+  for(let i=0;i<fileQueue.length;i++){
+    const f=fileQueue[i]; if(f.status==='done')continue;
+    fileQueue[i].status='pushing'; renderQueue();
+    log(`⬆ [${i+1}/${fileQueue.length}] ${f.path}...`,'info');
+    try{
+      const {ok,data}=await githubPush(owner,repo,branch,f.path,f.content,msg,f.sha,token);
+      if(ok){ fileQueue[i].status='done'; fileQueue[i].sha=data.content.sha; addKnownFile(f.path); log(`✅ ${f.path} — ${data.commit.sha.slice(0,7)}`,'success'); }
+      else{ fileQueue[i].status='error'; log(`❌ ${f.path}: ${data.message}`,'error'); }
+    }catch(e){ fileQueue[i].status='error'; log(`❌ ${f.path}: ${e.message}`,'error'); }
+    renderQueue();
+    await new Promise(r=>setTimeout(r,400));
   }
-
-  const body = { message: msg, content: btoa(unescape(encodeURIComponent(content))), branch };
-  if (currentSha) body.sha = currentSha;
-
-  log(`⬆ Pushen naar ${owner}/${repo}/${path}...`, 'info');
-  try {
-    const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
-      method: 'PUT',
-      headers: {
-        Authorization: `token ${token}`,
-        Accept: 'application/vnd.github.v3+json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    });
-    const d = await r.json();
-    if (r.ok) {
-      currentSha = d.content.sha;
-      addKnownFile(path);
-      log(`✅ Gepushed! Commit: ${d.commit.sha.slice(0,7)} — "${msg}"`, 'success');
-      log(`🔗 ${d.content.html_url}`, 'success');
-    } else {
-      log(`❌ Fout: ${d.message}`, 'error');
-    }
-  } catch(e) { log('❌ Netwerkfout: ' + e.message, 'error'); }
-
-  btn.disabled = false;
-  btn.innerHTML = '⬆ Push bestand';
+  btn.disabled=false; btn.innerHTML='⬆ Push alle bestanden';
+  log('🏁 Klaar!','success');
 }
 
-// ── Helpers ───────────────────────────────────────────────────
-function updateCount() {
-  const n = document.getElementById('content').value.length;
-  document.getElementById('charCount').textContent = n.toLocaleString('nl-NL') + ' tekens';
+function syncPreview(){
+  const html=document.getElementById('content').value;
+  const frame=document.getElementById('previewFrame');
+  frame.srcdoc=html.trim()||'<body style="background:#0d0f10;color:#6b7280;font-family:monospace;padding:20px;font-size:12px">Geen HTML inhoud</body>';
 }
 
-function log(msg, type) {
-  const el  = document.getElementById('log');
-  const ts  = new Date().toLocaleTimeString('nl-NL');
-  const cls = type === 'success' ? 'log-success' : type === 'error' ? 'log-error' : 'log-info';
-  el.innerHTML += `<span class="${cls}">[${ts}] ${msg}</span>\n`;
-  el.scrollTop = el.scrollHeight;
+function setPreviewSize(w,btn){
+  document.getElementById('previewFrame').style.width=w;
+  document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function updateCount(){ const n=document.getElementById('content').value.length; document.getElementById('charCount').textContent=n.toLocaleString('nl-NL')+' tekens'; }
+
+function log(msg,type){
+  const el=document.getElementById('log');
+  const ts=new Date().toLocaleTimeString('nl-NL');
+  const cls=type==='success'?'log-success':type==='error'?'log-error':'log-info';
+  el.innerHTML+=`<span class="${cls}">[${ts}] ${msg}</span>\n`;
+  el.scrollTop=el.scrollHeight;
 }
 </script>
 </body>
